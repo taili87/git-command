@@ -121,6 +121,18 @@ describe('example to-do app', () => {
       cy.contains('Walk the dog').should('not.exist')
     })
 
+    it('can filter for completed tasks 1', () => {
+      // We can perform similar steps as the test above to ensure
+      // that only completed tasks are shown
+      cy.contains('Completed').click()
+
+      cy.get('.todo-list li')
+        .should('have.length', 1)
+        .first()
+        .should('have.text', 'Pay electric bill')
+
+      cy.contains('Walk the dog').should('not.exist')
+    })
     it('can delete all completed tasks', () => {
       // First, let's click the "Clear completed" button
       // `contains` is actually serving two purposes here.
