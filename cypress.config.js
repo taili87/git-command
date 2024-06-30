@@ -7,5 +7,3 @@ module.exports = defineConfig({
     },
   },
 });
-
-//commit 1
